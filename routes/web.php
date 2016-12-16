@@ -3,11 +3,11 @@
 use App\Task;
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'can:show'], function () {
+//    Route::group(['middleware' => 'can:show,\App\User'], function () {
         Route::get('/tasks', function () {
             return view('tasks');
         });
-    });
+//    });
 
     Route::get('/profile/tokens', function () {
         return view('tokens');

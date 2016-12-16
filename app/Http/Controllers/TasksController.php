@@ -48,10 +48,10 @@ class TasksController extends Controller
         // Pagination
         // No error messages
         // Transformations: hem de transformar el que ensenyem
-//        if (Gate::allows('show-tasks')){
+        if (Gate::allows('show-tasks')){
             $tasks = Task::paginate(15);
             return $this->generatePaginatedResponse($tasks, ['propietari' => 'Sergi Tur']);
-//        }
+        }
     }
 
     /**

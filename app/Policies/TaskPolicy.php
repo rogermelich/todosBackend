@@ -19,8 +19,8 @@ class TaskPolicy
      */
     public function show(User $user)
     {
+        // if ($user
         return true;
-
 
     }
 
@@ -34,6 +34,7 @@ class TaskPolicy
     public function view(User $user, Task $task)
     {
         //
+        return true;
     }
 
     /**
@@ -45,6 +46,7 @@ class TaskPolicy
     public function create(User $user)
     {
         //
+
     }
 
     /**
