@@ -30,6 +30,8 @@ Vue.component(
     require('./components/passport/PersonalAccessTokens.vue')
 );
 
+Vue.component('todo', require('./components/Todo.vue'));
+
 //Vm: view model
 const app = new Vue({
     el: '#app'
