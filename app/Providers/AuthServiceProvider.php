@@ -14,7 +14,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Task' => 'App\Policies\ModelPolicy',
+        'App\Task' => 'App\Policies\TaskPolicy',
         //'App\User'
     ];
 
@@ -34,6 +34,10 @@ class AuthServiceProvider extends ServiceProvider
 
     private function defineGates()
     {
+        Gate::define('gate-name',function() {
+
+        });
+
         Gate::define('impossible-gate', function () {
             return false; //no autoritzat
         });
@@ -41,30 +45,30 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('easy-gate', function () {
             return true; //autoritzat
         });
-
-        Gate::define('update-task', function ($user, $post) {
-            return $user->id == $post->user_id;
-        });
-
-
-        Gate::define('update-task1', function ($user) {
-            return $user->isAdmin();
-        });
-
-//        Gate::define('update-task2', function ($user) {
-//            if ($user->isAdmin()) return true;
 //
+//        Gate::define('update-task', function ($user, $post) {
+//            return $user->id == $post->user_id;
 //        });
-
-        Gate::define('update-task3', function ($user, $task) {
-            if ($user->isAdmin()) return true;
-            if ($user->hasRole('editor')) return true;
-
-            return $user->id == $task->user_id;
-        });
-
-        Gate::define('show-tasks', function ($user) {
-            return false;
-        });
+//
+//
+//        Gate::define('update-task1', function ($user) {
+//            return $user->isAdmin();
+//        });
+//
+////        Gate::define('update-task2', function ($user) {
+////            if ($user->isAdmin()) return true;
+////
+////        });
+//
+//        Gate::define('update-task3', function ($user, $task) {
+//            if ($user->isAdmin()) return true;
+//            if ($user->hasRole('editor')) return true;
+//
+//            return $user->id == $task->user_id;
+//        });
+//
+//        Gate::define('show-tasks', function ($user) {
+//            return false;
+//        });
     }
 }
