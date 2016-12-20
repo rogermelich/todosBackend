@@ -39,10 +39,11 @@
 <script>
 
 export default {
-    props : {'todo', 'index', 'form'},
+    props: ['todo','index','from'],
+
     data() {
         return {
-            editing: false;
+            editing: false
         }
     },
     created() {

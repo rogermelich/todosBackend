@@ -32,7 +32,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->defineGates();
     }
 
-    private function defineGates()
+    protected function defineGates()
     {
         Gate::define('gate-name',function() {
 

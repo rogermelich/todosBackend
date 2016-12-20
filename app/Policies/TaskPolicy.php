@@ -8,7 +8,7 @@ use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TaskPolicy extends BasePolicy
 {
-    use HandlesAuthorization;
+    use HandlesAuthorization,HasAdmin;
 
     /**
      * @return string

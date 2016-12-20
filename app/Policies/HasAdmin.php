@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 
-class HasAdmin
+trait HasAdmin
 {
     /**
      * @param $user
