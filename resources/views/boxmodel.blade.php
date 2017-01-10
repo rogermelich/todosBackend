@@ -29,6 +29,7 @@
     {
         position: relative;
         top: 100px;
+        left: 30px;
         max-width: 600px;
         margin: 0 auto;
         padding: 50px;
