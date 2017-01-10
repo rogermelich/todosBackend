@@ -13,6 +13,17 @@
     {
         max-width: 600px;
         margin: 0 auto;
+        border: solid;
+        border-width: 5px;
+    }
+
+    #block2
+    {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 50px;
+        border: solid;
+        border-width: 10px;
     }
 </style>
 
