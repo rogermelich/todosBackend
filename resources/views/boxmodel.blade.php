@@ -18,6 +18,7 @@
 
     #block1
     {
+        position: relative;
         max-width: 600px;
         margin: 0 auto;
         border: solid;
@@ -26,6 +27,8 @@
 
     #block2
     {
+        position: relative;
+        top: 100px;
         max-width: 600px;
         margin: 0 auto;
         padding: 50px;
