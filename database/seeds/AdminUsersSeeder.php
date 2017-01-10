@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
 
 /**
  * Class AdminUsersSeeder
@@ -15,11 +16,15 @@ class AdminUsersSeeder extends Seeder
     public function run()
     {
         try {
-            factory(App\User::class)->create([
+            $user = factory(App\User::class)->create([
                     "name" => "Roger Melich",
                     "email" => "rogermelich@gmail.com",
                     "password" => bcrypt(env('ROGER_PWD', '123456'))]
             );
+
+            Role::create(['name' => 'admin']);
+            $user->assignRole('admin');
+
         } catch (\Illuminate\Database\QueryException $exception) {
 
         }
