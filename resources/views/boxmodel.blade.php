@@ -39,7 +39,7 @@
 
     #block3
     {
-        position: fixed;
+        position: absolute;
         margin: 20px auto;
         padding: 50px;
         border: solid;
@@ -54,9 +54,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntu
 </div>
 <div id="block2">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci alias deleniti ex expedita id ipsam molestias non odit provident! Blanditiis delectus et eum molestias non, nostrum possimus repudiandae velit.
-</div>
-<div id="block3">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eos in magnam tempora vel. Accusantium aliquid, assumenda, ducimus eos harum id maxime natus nesciunt nisi nobis optio quidem saepe, unde.
+
+
+    <div id="block3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eos in magnam tempora vel. Accusantium aliquid, assumenda, ducimus eos harum id maxime natus nesciunt nisi nobis optio quidem saepe, unde.
+    </div>
 </div>
 </body>
 </html>
