@@ -9,12 +9,19 @@
 </head>
 <body>
 <style>
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
     #block1
     {
         max-width: 600px;
         margin: 0 auto;
         border: solid;
-        border-width: 5px;
+        box-sizing: border-box;
     }
 
     #block2
@@ -23,7 +30,7 @@
         margin: 0 auto;
         padding: 50px;
         border: solid;
-        border-width: 10px;
+        box-sizing: border-box;
     }
 </style>
 
