@@ -22,6 +22,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('users', function () {
         dd(App\User::paginate());
     });
+
+    #adminlte_routes
+    Route::get('boxmodel', 'BoxmodelController@index')->name('boxmodel');
+
+
 });
 
 Route::get('/', function () {
