@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
     #adminlte_routes
+    Route::get('csstables', 'CsstablesController@index')->name('csstables');
+
     Route::get('floatlayout', 'FloatlayoutController@index')->name('floatlayout');
 
     Route::get('boxmodel', 'BoxmodelController@index')->name('boxmodel');
