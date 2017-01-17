@@ -7,58 +7,110 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
 <style>
-    *{
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-
-
-    #block1
+    body
     {
-        position: relative;
-        max-width: 600px;
-        margin: 0 auto;
-        border: solid;
-        box-sizing: border-box;
-    }
+        margin: 0px;
+        margin-bottom: 50px;
 
-    #block2
-    {
-        position: relative;
-        top: 100px;
-        left: 30px;
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 50px;
-        border: solid;
-        box-sizing: border-box;
     }
-
-    #block3
+    #nav
     {
         position: absolute;
-        margin: 20px auto;
-        padding: 50px;
-        border: solid;
-        box-sizing: border-box;
+        left:0px;
+        width: 200px;
+        border: solid black 1px;
+        background-color: lightgrey;
+        height: 100%;
+    }
+
+    #section
+    {
+        margin-left: 200px;
+        padding: 10px;
+        background-color: orangered;
+    }
+
+    #footer
+    {
+        position: fixed;
+        bottom: 0px;
+        height: 50px;
+        border: solid black 1px;
+        width: 100%;
+        background-color: lightblue;
+    }
+
+    #header
+    {
+        position: relative;
+        bottom: 0px;
+        height: 50px;
+        border: solid black 1px;
+        width: 100%;
+        background-color: lightseagreen;
+    }
+
+    #container
+    {
+        position: relative;
     }
 </style>
-
-<div id="block1">
-    <span>Això es una prova inline</span>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab commodi consequuntur, cum deleniti dolorum, eius fugiat modi neque nesciunt odio officiis provident quasi quibusdam, quos repellat temporibus velit vero voluptatem!
-    <a href="http://www.google.es" style="display: block">Google</a>
+<body>
+<div id="header">
+    Header
 </div>
-<div id="block2">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium adipisci alias deleniti ex expedita id ipsam molestias non odit provident! Blanditiis delectus et eum molestias non, nostrum possimus repudiandae velit.
+<div id="container">
+<div id="nav">
+    <ul>
+        <li>link1</li>
+        <li>link2</li>
+        <li>link3</li>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+</div>
 
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
+<div id="section">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti est et ipsam iure, nesciunt pariatur! Atque consectetur, ipsum labore nobis non numquam porro provident quo quod repellat repudiandae veniam vitae!
+</div>
 
-    <div id="block3">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A eos in magnam tempora vel. Accusantium aliquid, assumenda, ducimus eos harum id maxime natus nesciunt nisi nobis optio quidem saepe, unde.
-    </div>
+<div id="footer">
+    @copyright Roger Inc.
+</div>
 </div>
 </body>
 </html>

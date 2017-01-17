@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use App\Transformers\Contracts\Transformer;
+use App\Transformers\Contracts\Transformer;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -20,10 +20,10 @@ class Controller extends BaseController
      *
      * @param $transformer
      */
-//    public function __construct(Transformer $transformer)
-//    {
-//        $this->transformer = $transformer;
-//    }
+    public function __construct(Transformer $transformer)
+    {
+        $this->transformer = $transformer;
+    }
 
 
     protected function transformCollection($resources)
