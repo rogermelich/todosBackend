@@ -65,7 +65,7 @@ export default {
         edittodo: function() {
             console.log('TODO editing');
         },
-        deletetodo: function(index) {
+        deletetodo: function() {
             console.log('Deleting todo');
             this.$emit('todo-deleted',index);
         },

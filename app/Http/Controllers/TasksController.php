@@ -43,7 +43,13 @@ class TasksController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('show', \App\Task::class);
+//        $user = Auth::user();
+//        if ($user->can('show', \App\Task::class)) {
+//            //
+//        }
+
+        //$this->authorize('show', \App\Task::class);
+
         // The current user can update the post...
         $tasks = Task::paginate(15);
         return $this->generatePaginatedResponse($tasks, ['propietari' => 'Roger Melich']);
@@ -72,6 +78,12 @@ class TasksController extends Controller
             $request->merge(['user_id' => Auth::id() ]);
         }
         Task::create($request->all());
+
+        return response([
+            'error'   => false,
+            'created' => true,
+            'message' => 'Task created!',
+        ], 200);
     }
 
     /**
@@ -110,10 +122,15 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $task = Task::findOrFail($id);
-        $this->authorize('update', $task);
+        $task = Task::findOrFail($id)->update($request->all());
 
-        //
+        //$this->authorize('update', $task);
+
+        return response([
+            'error'   => false,
+            'updated' => true,
+            'message' => 'Task updated!',
+        ], 200);
     }
 
     /**
@@ -125,6 +142,11 @@ class TasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Task::findOrFail($id)->delete();
+        return response([
+            'error'   => false,
+            'deleted' => true,
+            'message' => 'Task deleted!',
+        ], 200);
     }
 }

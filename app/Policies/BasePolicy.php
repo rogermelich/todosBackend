@@ -5,7 +5,11 @@ namespace App\Policies;
 use App\Task;
 use App\User;
 
-
+/**
+ * Class BasePolicy.
+ *
+ * @package App\Policies
+ */
 abstract class BasePolicy
 {
     abstract protected function model();
@@ -17,7 +21,7 @@ abstract class BasePolicy
      */
     public function show(User $user)
     {
-        if ($user->hasPermissionTo('show-' . $this->model())) return true;
+        if ($user->hasPermissionTo('show-task' . $this->model())) return true;
     }
     /**
      * Determine whether the user can view the task.
@@ -28,7 +32,7 @@ abstract class BasePolicy
      */
     public function view(User $user, Task $task)
     {
-        if ($user->hasPermissionTo('view-' . $this->model())) return true;
+        if ($user->hasPermissionTo('view-task' . $this->model())) return true;
     }
     /**
      * Determine whether the user can create tasks.
@@ -38,7 +42,7 @@ abstract class BasePolicy
      */
     public function create(User $user)
     {
-        if ($user->hasPermissionTo('create-' . $this->model())) return true;
+        if ($user->hasPermissionTo('create-task' . $this->model())) return true;
     }
     /**
      * Determine whether the user can update the task.
@@ -49,7 +53,7 @@ abstract class BasePolicy
      */
     public function update(User $user, Task $task)
     {
-        if ($user->hasPermissionTo('update-' . $this->model())) return true;
+        if ($user->hasPermissionTo('update-tasks' . $this->model())) return true;
     // if ($user->isAdmin()) return true;
     // if ($user->hasRole('editor')) return true;
     // return $user->id == $task->user_id;

@@ -7,6 +7,11 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Laravel\Passport\Passport;
 use Route;
 
+/**
+ * Class AuthServiceProvider.
+ *
+ * @package App\Providers
+ */
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -28,7 +33,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Route::group(['middleware' => 'cors'], function () {
+        Route::group(['middleware' => 'cors'], function() {
             Passport::routes();
         });
 

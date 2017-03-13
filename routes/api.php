@@ -6,8 +6,8 @@ Route::group(['prefix' => 'v1', 'middleware' => ['cors', 'auth:api']], function 
     Route::resource('user', 'UsersController');
     Route::resource('user.task', 'UserTasksController');
     //Add Route Get for /user
-    Route::get('/user', function (Request $request) {
-        return $request::user();
+    Route::get('/user', function () {
+        return Auth::user();
     });
 });
 
