@@ -48,7 +48,7 @@ class TasksController extends Controller
 //            //
 //        }
 
-        $this->authorize('show-task', \App\Task::class);
+        //$this->authorize('show-task', \App\Task::class);
 
         // The current user can update the post...
         $tasks = Task::paginate(15);
