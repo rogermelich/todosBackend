@@ -13,6 +13,7 @@
                 <div class="box-body">
                     <div class="form-group">
                         <label for="name">Name</label>
+                        <!--Name-->
                         <input type="name" class="form-control" id="name" placeholder="Enter task name here"
                                v-model="newTodo"
                                @keyup.enter="addTodo">
@@ -55,6 +56,8 @@
                           v-bind:todo="todo"
                           v-bind:index="index"
                           v-bind:from="from"
+                          v-bind:page="page"
+                          v-bind:fetchPage="fetchPage"
                           @todo-deleted="deleteTodo">
                     </todo>
                     </tbody>
@@ -127,6 +130,16 @@ export default {
         this.fetchData();
     },
     methods: {
+        getTodoId: function(index) {
+            this.$http.get('/api/v1/task').then((response) => {
+                var todos = this.todos = response.data.data;
+                this.id = todos[index].id;
+            }, (response) => {
+                // error callback
+                sweetAlert("Oops...", "Something went wrong!", "error");
+                console.log(response);
+            });
+        },
         pageChanged: function(pageNum) {
             this.page = pageNum;
             this.fetchPage(pageNum);
@@ -139,12 +152,12 @@ export default {
             var todo = {
                 name: value,
                 priority: 1,
-                done: false
+                done: false,
+                user_id: 1,
             };
             this.todos.push(todo);
             this.newTodo = '';
             this.addTodoToApi(todo);
-            this.fetchPage(this.page);
         },
         setVisibility: function(visibility) {
             this.visibility = visibility;
@@ -154,16 +167,18 @@ export default {
         },
         addTodoToApi: function(todo) {
             this.$http.post('/api/v1/task', {
-                    name: todo.name,
-                    priority: todo.priority,
-                    done: todo.done
-                }).then((response) => {
-                console.log(response);
+                name: todo.name,
+                priority: todo.priority,
+                done: todo.done,
+                user_id: todo.user_id,
+            }).then((response) => {
+                console.log('Task with name \"' + todo.name + '\" created succesfully!');
             }, (response) => {
                 // error callback
                 sweetAlert("Oops...", "Something went wrong!", "error");
                 console.log(response);
             });
+            this.fetchPage(this.page);
         },
         fetchPage: function(page) {
             this.$http.get('/api/v1/task?page=' + page).then((response) => {
@@ -179,9 +194,31 @@ export default {
                 console.log(response);
             });
         },
-        deleteTodo: function(index) {
-            this.todos.splice(index,1)
-            //TODO -> executar API!!!
+        deleteTodo: function(id) {
+            var del = this;
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this task!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD4B55",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false
+            },
+            function(){
+                del.deleteTodoFromApi(id);
+                //del.todos.splice(index,1);
+                sweetAlert("Deleted!", "Your task has been deleted.", "success");
+            });
+        },
+        deleteTodoFromApi: function(id) {
+            this.$http.delete('/api/v1/task/' + id).then((response) => {
+                console.log('Task ' + id + ' deleted succesfully!');
+            }, (response) => {
+                sweetAlert("Oops...", "Something went wrong!", "error");
+                console.log(response);
+            });
+            this.fetchPage(this.page);
         }
     }
 }
