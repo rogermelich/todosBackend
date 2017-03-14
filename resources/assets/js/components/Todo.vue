@@ -4,12 +4,9 @@
         <td>
             <div v-if="!editing" @dblclick="editTodo(page,todo.id)">
                 <span>{{todo.name}}</span>
-                <!--<button style="float: right;" type="button" class="btn btn-warning btn-flat btn-xs" @click="editTodo(page,todo.id)">-->
-                    <!--<i class="fa fa-fw fa-edit"></i>-->
-                <!--</button>-->
             </div>
             <div v-else @keyup.esc="uneditTodo(page)" @keyup.enter="editTodo(page,todo.id)">
-                <input v-model="todo.name" size="100">
+                <input v-model="todo.name" size="60">
                 <div  style="float: right;">
                     <button type="button" class="btn btn-success btn-flat btn-xs" @click="editTodo(page,todo.id)">
                         <i class="fa fa-fw fa-check"></i>
