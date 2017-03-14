@@ -36,6 +36,7 @@ Menu::macro('sidebar', function () {
         ->add(Link::toUrl('boxmodel', 'Boxmodel'))
         ->add(Link::to('/profile/tokens', 'Tokens'))
         ->add(Link::to('/tasks', 'Tasks'))
+	->add(Link::to('/tasks1', 'Tasks 1'))
         ->add(Menu::adminlteSeparator('SECONDARY MENU'))
         ->add(Menu::new()->prepend('<a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>')
             ->addParentClass('treeview')
