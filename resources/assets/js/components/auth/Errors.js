@@ -11,6 +11,10 @@ class Errors {
         return this.errors.hasOwnProperty(field)
     }
 
+    any() {
+        return Object.keys(this.errors).length > 0
+    }
+
     /**
      * Retrieve the error message for a field
      *
@@ -21,7 +25,7 @@ class Errors {
         if (this.errors[field]) {
             return this.errors[field][0]
         }
-        
+
     }
 
     /**
