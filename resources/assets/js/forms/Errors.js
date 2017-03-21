@@ -1,8 +1,10 @@
-class Errors {
+export class Errors {
     /**
      *  Constructor
      */
-    constructor() { this.errors = {} }
+    constructor() {
+        this.errors = {}
+    }
 
     /**
      * API

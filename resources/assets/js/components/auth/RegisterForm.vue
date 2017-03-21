@@ -36,6 +36,7 @@
                 </div>
             </div><!-- /.col -->
             <div class="col-xs-4 col-xs-push-1">
+                <span class="fa fa-refresh fa-spinner"></span>
                 <button type="submit" class="btn btn-primary btn-block btn-flat" :disabled="form.errors.any()">Register</button>
             </div><!-- /.col -->
         </div>
@@ -43,116 +44,8 @@
 </template>
 
 <script>
-//import Errors from './Errors.js'
+import Forms from '../forms/Forms.js'
 
-class From {
-    /**
-     *  Constructor
-     */
-    constructor(originalFields) {
-        this.fields = originalFields;
-
-        for (let field in originalFields) {
-            this[field] = originalFields[field]
-        }
-
-        this.errors = new Errors()
-    }
-
-    /**
-    * Reset
-    */
-    reset() {
-        this.fields = {}
-
-        for (let field in originalFields) {
-               this.field = ''
-        }
-
-        this.errors.clear()
-    }
-
-    /**
-    * Submit
-    */
-    submit(requiestType, url) {
-        return new Promise( (resolve,reject) => {
-            axios.post(url.this.fields)
-            .then(response => {
-                console.log(responsive)
-            })
-            .catch(error => {
-                reject(error.response.data)
-            })
-        })
-    }
-
-    data(){}
-
-    onSuccess(data){
-        //TODO
-        this.reset()
-    }
-
-    onFail(data){
-        //TODO
-        this.errors.record(errors.response.data)
-    }
-
-}
-
-class Errors {
-    /**
-     *  Constructor
-     */
-    constructor() {
-        this.errors = {}
-    }
-
-    /**
-     * API
-     */
-    has(field) {
-        return this.errors.hasOwnProperty(field)
-    }
-
-    any() {
-        return Object.keys(this.errors).length > 0
-    }
-
-    /**
-     * Retrieve the error message for a field
-     *
-     * @param field
-     * @returns {*}
-     */
-    get(field) {
-        if (this.errors[field]) {
-            return this.errors[field][0]
-        }
-
-    }
-
-    /**
-     *
-     * @param errors
-     */
-    record(errors) {
-        this.errors = errors
-    }
-
-    /**
-     *
-     * @param field
-     */
-    clear(field) {
-        if (field) {
-            delete this.errors(field)
-            return
-        }
-        this.errors = {}
-    }
-}
 
 export default {
   mounted () {
