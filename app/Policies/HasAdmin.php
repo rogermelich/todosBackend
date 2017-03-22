@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Policies;
+namespace RogerMelich\TodosBackend\Policies;
 
 /**
  * Class HasAdmin.
  *
- * @package App\Policies
+ * @package RogerMelich\TodosBackend\Policies
  */
 trait HasAdmin
 {

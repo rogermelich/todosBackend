@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RogerMelich\TodosBackend\Http\Controllers;
 
-use App\Repositories\UserRepository;
-use App\Transformers\UserTransformer;
-use App\User;
+use RogerMelich\TodosBackend\Repositories\UserRepository;
+use RogerMelich\TodosBackend\Transformers\UserTransformer;
+use RogerMelich\TodosBackend\User;
 use Illuminate\Http\Request;
 
 

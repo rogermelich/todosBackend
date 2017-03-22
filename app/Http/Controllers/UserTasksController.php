@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace RogerMelich\TodosBackend\Http\Controllers;
 
-use App\Repositories\UserTasksRepository;
-use App\Transformers\TaskTransformer;
-use App\Task;
-use App\User;
+use RogerMelich\TodosBackend\Repositories\UserTasksRepository;
+use RogerMelich\TodosBackend\Transformers\TaskTransformer;
+use RogerMelich\TodosBackend\Task;
+use RogerMelich\TodosBackend\User;
 use Illuminate\Http\Request;
 
 /**
  * Class UserTasksController
- * @package App\Http\Controllers
+ * @package RogerMelich\TodosBackend\Http\Controllers
  */
 class UserTasksController extends Controller
 {

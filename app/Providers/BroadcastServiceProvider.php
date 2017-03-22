@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace RogerMelich\TodosBackend\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;

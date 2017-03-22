@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace RogerMelich\TodosBackend\Http\Controllers\Auth;
 
-use App\User;
+use RogerMelich\TodosBackend\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use RogerMelich\TodosBackend\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 /**
