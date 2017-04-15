@@ -6,7 +6,11 @@ use RogerMelich\TodosBackend\Task;
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => 'can:show,RogerMelich\TodosBackend\Task'], function () {
         Route::get('/tasks', function () {
-            return view('tasks');
+            $token = "TODO";
+            $data = [
+                "access_token" => $token
+            ];
+            return view('tasks',$data);
         });
     });
 
