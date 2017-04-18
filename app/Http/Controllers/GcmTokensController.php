@@ -27,3 +27,4 @@ class GcmTokensController extends TodosBaseController
         broadcast(new GcmTokenCreated($user, $token))->toOthers();
         return ['status' => 'Token saved!'];
     }
+}
