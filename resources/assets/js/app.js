@@ -14,6 +14,8 @@ require('./bootstrap');
  */
 
 Vue.component('todos', require('./components/Todos.vue'));
+Vue.component('chat-messages', require('./components/ChatMessages.vue'));
+Vue.component('chat-form', require('./components/ChatForm.vue'));
 
 Vue.component(
     'passport-clients',
@@ -34,5 +36,36 @@ Vue.component(
 
 //Vm: view model
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        messages: []
+    },
+
+    created() {
+        this.fetchMessages();
+
+        Echo.channel('chat')
+            .listen('MessageSent', (e) => {
+                this.messages.push({
+                    message: e.message.message,
+                    user: e.user
+                });
+            });
+    },
+
+    methods: {
+        fetchMessages() {
+            axios.get('/user/messages').then(response => {
+                this.messages = response.data
+            });
+        },
+
+        addMessage(message) {
+            this.messages.push(message)
+
+            axios.post('/messages', message).then(response => {
+                console.log(response.data)
+            })
+        }
+    }
 });

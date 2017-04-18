@@ -23,8 +23,8 @@ require('icheck');
 window.Vue = require('vue');
 // require('vue-resource');
 
-window.axios = require('axios');
-Vue.prototype.$http = axios;
+// window.axios = require('axios');
+// Vue.prototype.$http = axios;
 
 require('sweetalert');
 
@@ -40,17 +40,35 @@ require('sweetalert');
 //    next();
 //});
 
-axios.defaults.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
+window.axios = require('axios');
 
+window.axios.defaults.headers.common = {
+    'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    'X-Requested-With': 'XMLHttpRequest'
+};
+
+// Use trans function in Vue (equivalent to trans() Laravel Translations helper). See htmlheader.balde.php partial.
+Vue.prototype.trans = (key) => {
+    return _.get(window.trans, key, key);
+};
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from "laravel-echo"
+import Echo from "laravel-echo"
+
+import io from "socket.io-client"
+window.io = io
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: window.Laravel.echoServerURL,
+    namespace: 'RogerMelich.TodosBackend.Events'
+});
