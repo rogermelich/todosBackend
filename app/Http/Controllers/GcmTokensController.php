@@ -5,6 +5,7 @@ namespace Acacha\TodosBackend\Http\Controllers;
 use RogerMelich\TodosBackend\Events\GcmTokenCreated;
 use Auth;
 use Illuminate\Http\Request;
+use RogerMelich\TodosBackend\Http\Controllers\TodosBaseController;
 
 /**
  * Class GcmTokensController.
