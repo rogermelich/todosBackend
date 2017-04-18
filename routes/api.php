@@ -9,6 +9,9 @@ Route::group(['prefix' => 'v1', 'middleware' => ['cors', 'auth:api']], function 
     Route::get('/user', function () {
         return Auth::user();
     });
+
+    Route::post('/user/gcmtoken', 'GcmTokensController@addToken');
+    Route::get('/user/messages', 'MessagesController@fetchMessages');
 });
 
 //Example Laravel API user request
