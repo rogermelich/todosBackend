@@ -1,6 +1,6 @@
 <?php
 
-namespace Acacha\TodosBackend\Http\Controllers;
+namespace RogerMelich\TodosBackend\Http\Controllers;
 
 use RogerMelich\TodosBackend\Events\GcmTokenCreated;
 use Auth;
