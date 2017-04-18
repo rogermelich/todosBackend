@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'RogerMelich\TodosBackend\Events\SomeEvent' => [
-            'RogerMelich\TodosBackend\Listeners\EventListener',
+        'Illuminate\Auth\Events\Registered' => [
+            'RogerMelich\TodosBackend\Listeners\UserRegistered',
         ],
     ];
 

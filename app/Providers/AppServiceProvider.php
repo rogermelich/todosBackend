@@ -14,9 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        User::created(function ($user) {
-            $user->assignRole('admin');
-        });
+//        User::created(function ($user) {
+//            $user->assignRole('admin');
+//        });
     }
 
     /**
