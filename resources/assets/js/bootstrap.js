@@ -23,8 +23,8 @@ require('icheck');
 window.Vue = require('vue');
 // require('vue-resource');
 
-// window.axios = require('axios');
-// Vue.prototype.$http = axios;
+window.axios = require('axios');
+Vue.prototype.$http = axios;
 
 require('sweetalert');
 
@@ -40,7 +40,7 @@ require('sweetalert');
 //    next();
 //});
 
-window.axios = require('axios');
+// window.axios = require('axios');
 
 window.axios.defaults.headers.common = {
     'X-CSRF-TOKEN': window.Laravel.csrfToken,
@@ -48,9 +48,9 @@ window.axios.defaults.headers.common = {
 };
 
 // Use trans function in Vue (equivalent to trans() Laravel Translations helper). See htmlheader.balde.php partial.
-Vue.prototype.trans = (key) => {
-    return _.get(window.trans, key, key);
-};
+// Vue.prototype.trans = (key) => {
+//     return _.get(window.trans, key, key);
+// };
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
