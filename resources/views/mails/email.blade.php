@@ -11,9 +11,9 @@
         {{$email}}
         {{$token}}
 
-        @component('mail::button', ['url' => $actionUrl])
-        Reset Password
-        @endcomponent
+        {{--@component('mail::button', ['url' => $actionUrl])--}}
+        {{--Reset Password--}}
+        {{--@endcomponent--}}
 
 
     @endcomponent
