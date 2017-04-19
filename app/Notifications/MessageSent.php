@@ -89,25 +89,25 @@ class MessageSent extends Notification implements ShouldQueue
      * @param $notifiable
      * @return mixed
      */
-    public function toOneSignal($notifiable)
-    {
-        return OneSignalMessage::create()
-            ->subject($this->user)
-            ->body($this->message);
-    }
-
-    /**
-     * To telegram.
-     *
-     * @param $notifiable
-     * @return mixed
-     */
-    public function toTelegram($notifiable)
-    {
-        $url = url('https://rmelich.todosbackend.2dam.acacha.org/');
-        return TelegramMessage::create()
-            ->to('@dam21617alum')
-            ->content($this->message->message)// Markdown supported.
-            ->button('Go to todosBackend', $url); // Inline Button
-    }
+//    public function toOneSignal($notifiable)
+//    {
+//        return OneSignalMessage::create()
+//            ->subject($this->user)
+//            ->body($this->message);
+//    }
+//
+//    /**
+//     * To telegram.
+//     *
+//     * @param $notifiable
+//     * @return mixed
+//     */
+//    public function toTelegram($notifiable)
+//    {
+//        $url = url('https://rmelich.todosbackend.2dam.acacha.org/');
+//        return TelegramMessage::create()
+//            ->to('@dam21617alum')
+//            ->content($this->message->message)// Markdown supported.
+//            ->button('Go to todosBackend', $url); // Inline Button
+//    }
 }
