@@ -16,6 +16,7 @@ require('./bootstrap');
 Vue.component('todos', require('./components/Todos.vue'));
 Vue.component('chat-messages', require('./components/ChatMessages.vue'));
 Vue.component('chat-form', require('./components/ChatForm.vue'));
+Vue.component('register-form', require('./components/auth/RegisterForm.vue'));
 
 Vue.component(
     'passport-clients',
